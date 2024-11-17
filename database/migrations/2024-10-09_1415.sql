@@ -1,5 +1,6 @@
 CREATE DATABASE ssea;
 -- Crear usuario 'ssea_user' con acceso completo a la base de datos 'ssea'
+DROP USER IF EXISTS 'ssea_user'@'%';
 CREATE USER 'ssea_user'@'%' IDENTIFIED BY '12345678';
 
 -- Otorgar todos los privilegios sobre la base de datos 'ssea' al usuario 'ssea_user'
