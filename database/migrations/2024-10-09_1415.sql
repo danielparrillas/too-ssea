@@ -1,6 +1,4 @@
 CREATE DATABASE ssea;
-		DEFAULT CHARACTER SET = 'utf8mb4';
-
 -- Crear usuario 'ssea_user' con acceso completo a la base de datos 'ssea'
 CREATE USER 'ssea_user'@'%' IDENTIFIED BY '12345678';
 
