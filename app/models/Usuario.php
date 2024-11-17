@@ -44,7 +44,6 @@ class Usuario
 
 			if ($usuario) {
 				$showError = true;
-				echo "El usuario ya existe.";
 				return false;
 			}
 

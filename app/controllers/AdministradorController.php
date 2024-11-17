@@ -25,34 +25,35 @@ class AdministradorController
     {
         $rol = strtolower(filter_input(INPUT_GET, 'rol', FILTER_SANITIZE_FULL_SPECIAL_CHARS) ?? '');
         $email = filter_input(INPUT_GET, 'email', FILTER_SANITIZE_EMAIL) ?? '';
-    
+
         if (empty($this->administrador->id)) {
             $error = 'Access denied. Administrator not logged in.';
             require_once __DIR__ . '/../views/administrar-usuarios.php';
             return;
         }
-    
+
         $rolesMap = [
             'operador' => 'operadores',
             'gerente' => 'gerentes',
             'cliente' => 'clientes'
         ];
-    
+
         $roleKey = $rolesMap[$rol] ?? '';
-    
+
         if ($roleKey) {
             $usuarios = $this->administrador->obtenerUsuarios($roleKey, $email);
-        }else{
+        } else {
             $usuarios = [];
         }
 
-    
+
         require_once __DIR__ . '/../views/administrar-usuarios.php';
     }
-    
 
 
-    public function GuardarCambios() {
+
+    public function GuardarCambios()
+    {
         $id = $_POST['id'];
         $nombre = $_POST['nombre'];
         $apellido = $_POST['apellido'];
@@ -61,34 +62,42 @@ class AdministradorController
         $estado = $_POST['status'];
         $rol = $_POST['rol'];
         $correo = $_POST['correo'];
-        $dui = $_POST['rol'];
-        $telefono = $_POST['correo'];
-    
+        $dui = $_POST['dui'];
+        $telefono = $_POST['telefono'];
+
+        try {
             $this->administrador->updateUsuario($id, $nombre, $estado, $rol, $correo);
-    
-        if ($rol == 'cliente') {
-            $this->administrador->saveCliente($id, $nombre, $apellido, $estado, $dui, $telefono);
-        } else {
-            $table = ($rol == 'gerente') ? 'gerentes' : 'operadores';
-    
-            $this->administrador->saveGerenteOOperador(
-                $table,
-                $id,
-                $nombre,
-                $apellido,
-                $codigo_empleado,
-                $extension_tel,
-                $estado
-            );
+
+            if ($rol == 'cliente') {
+                $this->administrador->saveCliente($id, $nombre, $apellido, $estado, $dui, $telefono);
+            } else {
+                $table = ($rol == 'gerente') ? 'gerentes' : 'operadores';
+
+                $this->administrador->saveGerenteOOperador(
+                    $table,
+                    $id,
+                    $nombre,
+                    $apellido,
+                    $codigo_empleado,
+                    $extension_tel,
+                    $estado
+                );
+            }
+
+            $success = '¡El usuario se actualizó correctamente!';
+            require_once __DIR__ . '/../views/administrar-usuarios.php';
+
+        } catch (PDOException $e) {
+            if ($e->getCode() == 23000) {
+                $error = 'El correo electrónico ingresado ya está en uso. Por favor, intenta con otro correo.';
+            } else {
+                $error = 'Ocurrió un problema al actualizar el usuario. Por favor, intenta nuevamente.';
+            }
+
+            require_once __DIR__ . '/../views/editar-usuario.php';
+
+           
         }
-    
-        require_once __DIR__ . '/../views/administrar-usuarios.php';
 
     }
-    
-
-
-
-
 }
-

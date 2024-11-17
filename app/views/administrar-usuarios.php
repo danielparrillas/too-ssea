@@ -9,6 +9,24 @@ date_default_timezone_set('America/El_Salvador');
 <body>
     <?php require_once __DIR__ . '/components/navbar.php'; ?>
 
+    <?php if (isset($success)): ?>
+        <div id="successMessage" class="p-4 mb-4 text-sm text-green-800 rounded-lg bg-green-50 dark:bg-green-800 dark:text-Green-400 text-center" role="alert">
+            <span class="font-medium"></span> <?php echo $success; ?>
+        </div>
+    <?php endif; ?>
+
+
+    <script>
+        setTimeout(function() {
+            var successMessage = document.getElementById('successMessage');
+
+            if (successMessage) {
+                successMessage.style.display = 'none';
+            }
+            
+        }, 3000);
+    </script>
+
 
     <div class="container mt-5">
         <h1 class="mb-4 text-center">Administrar Usuarios</h1>
@@ -72,16 +90,16 @@ date_default_timezone_set('America/El_Salvador');
 
                                 <!-- Columnas dinámicas para mostrar DUI/Teléfono o Extensión Tel./Estado -->
                                 <td><?= htmlspecialchars(
-                                    $usuario['rol'] === 'cliente'
-                                    ? ($usuario['dui'] ?? '')
-                                    : ($usuario['extension_tel'] ?? '')
-                                ) ?></td>
+                                        $usuario['rol'] === 'cliente'
+                                            ? ($usuario['dui'] ?? '')
+                                            : ($usuario['extension_tel'] ?? '')
+                                    ) ?></td>
 
                                 <td><?= htmlspecialchars(
-                                    $usuario['rol'] === 'cliente'
-                                    ? ($usuario['telefono'] ?? '')
-                                    : ucfirst($usuario['estado'] ?? '')
-                                ) ?></td>
+                                        $usuario['rol'] === 'cliente'
+                                            ? ($usuario['telefono'] ?? '')
+                                            : ucfirst($usuario['estado'] ?? '')
+                                    ) ?></td>
 
 
                                 <td class="text-center">
