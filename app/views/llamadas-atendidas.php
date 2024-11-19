@@ -22,6 +22,9 @@ date_default_timezone_set('America/El_Salvador');
 					<th>Teléfono</th>
 					<th>Tipo de emergencia</th>
 					<th>Resolución</th>
+					<?php if ($role === 'gerente'): ?>
+						<th>Operador</th>
+					<?php endif; ?>
 					<th>Observaciones</th>
 					<th>Estado</th>
 					<th></th>
