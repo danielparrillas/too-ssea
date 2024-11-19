@@ -81,7 +81,7 @@ class OperadorController
 				echo "Error al dar seguimiento a la llamada";
 			}
 		} else {
-			$error = null;			
+			$error = null;
 			$this->llamada->id = $_GET['id'];
 			$llamada = $this->llamada->getById($_GET['id']);
 			$cliente = $this->cliente->getById($llamada['cliente_id']);
@@ -97,7 +97,7 @@ class OperadorController
 	public function editarLlamada()
 	{
 		if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-			$this->llamada->id = $_POST['id'];
+			$this->llamada->id = $_GET['id'];
 			$this->llamada->fecha_llamada = $_POST['fecha_llamada'];
 			$this->llamada->hora_llamada = $_POST['hora_llamada'];
 			$this->llamada->duracion = $_POST['duracion'];

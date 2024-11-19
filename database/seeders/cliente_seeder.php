@@ -46,6 +46,116 @@ $usuariosClientes = [
 		'email' => 'cliente3@too.ues',
 		'status' => 'activo'
 	],
+	[
+		'correo' => 'cliente4@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Sophia',
+		'apellido' => 'Williams',
+		'rol' => 'cliente',
+		'telefono' => '55667788',
+		'dui' => '45678901-4',
+		'email' => 'cliente4@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente5@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'James',
+		'apellido' => 'Jones',
+		'rol' => 'cliente',
+		'telefono' => '66778899',
+		'dui' => '56789012-5',
+		'email' => 'cliente5@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente6@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Olivia',
+		'apellido' => 'Garcia',
+		'rol' => 'cliente',
+		'telefono' => '77889900',
+		'dui' => '67890123-6',
+		'email' => 'cliente6@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente7@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Benjamin',
+		'apellido' => 'Martinez',
+		'rol' => 'cliente',
+		'telefono' => '88990011',
+		'dui' => '78901234-7',
+		'email' => 'cliente7@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente8@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Emma',
+		'apellido' => 'Hernandez',
+		'rol' => 'cliente',
+		'telefono' => '99001122',
+		'dui' => '89012345-8',
+		'email' => 'cliente8@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente9@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Liam',
+		'apellido' => 'Lopez',
+		'rol' => 'cliente',
+		'telefono' => '11002233',
+		'dui' => '90123456-9',
+		'email' => 'cliente9@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente10@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Isabella',
+		'apellido' => 'Gonzalez',
+		'rol' => 'cliente',
+		'telefono' => '22003344',
+		'dui' => '01234567-0',
+		'email' => 'cliente10@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente11@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Noah',
+		'apellido' => 'Perez',
+		'rol' => 'cliente',
+		'telefono' => '33004455',
+		'dui' => '12345678-1',
+		'email' => 'cliente11@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente12@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Ava',
+		'apellido' => 'Ramirez',
+		'rol' => 'cliente',
+		'telefono' => '44005566',
+		'dui' => '23456789-2',
+		'email' => 'cliente12@too.ues',
+		'status' => 'activo'
+	],
+	[
+		'correo' => 'cliente13@too.ues',
+		'contrasena' => '1234',
+		'nombre' => 'Elijah',
+		'apellido' => 'Torres',
+		'rol' => 'cliente',
+		'telefono' => '55006677',
+		'dui' => '34567890-3',
+		'email' => 'cliente13@too.ues',
+		'status' => 'activo'
+	],
 ];
 
 // Registrar los usuarios y clientes
